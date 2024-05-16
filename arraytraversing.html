@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <title>Array_ Traversing</title>
     <script>
-        let data = [9,45,2,8,45,23,7,78,0,11,41,77]
-        for(let i=0; i<data.length; i++){
-            document.write(`Array ${i} is ${data[i]} <br>`)
+        let data = [9, 45, 2, 8, 45, 23, 7, 78, 0, 11, 41, 77]
+        //for(let i=0; i<data.length; i++){
+        //    document.write(`Array ${i} is ${data[i]} <br>`)
+        //}
+        // let x = 11
+        // document.write(data[x])
+
+   const getElement = () => {
+        let el = parseInt(document.getElementById('element').value);
+
+        if (el >= 0 && el < data.length) {
+            alert(data[el]);
         }
+        else {
+            alert("Please enter a valid input");
+        }
+    }
     </script>
-</head>          
+</head>
+
 <body>
-    
+    <input type="text" id="element">
+    <button onclick="getElement()">
+        Get Element
+    </button>
+
 </body>
 
 </html>
