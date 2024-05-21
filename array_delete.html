@@ -11,9 +11,11 @@
         }
         data.length = data.length -1
         console.warn(data) */
+      //data.splice(2,1)        by js inbuilt function for delete
+      //console.warn(data)
       const removeElement = () => {
         let data = [10, 20, 30, 40, 50, 60]
-        let position = parseInt(document.getElementById('position').value)
+        let position = parseInt(document.getElementById("position").value)
         for (let i = position; i < data.length - 1; i++) {
           //console.warn(data[i])
           data[i] = data[i + 1]
