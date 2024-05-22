@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Merge two array with while loop</title>
+  </head>
+  <script>
+    const data = [1, 2, 3, 4, 5]
+    const data2 = [6, 7, 8, 9, 10]
+    const data3 = []
+    let i = 0
+    let j = 0
+
+    while (i < data.length || j < data2.length) {
+      if (i < data.length) {
+        data3.push(data[i])
+        i++
+      } else {
+        data3.push(data2[j])
+        j++
+      }
+    }
+    console.warn(data3)
+  </script>
+  <body></body>
+</html>
+
+//32 line //6 space complexity
