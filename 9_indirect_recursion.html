@@ -3,7 +3,7 @@
   <head>
     <title>Indirect Recursion</title>
     <script>
-      let money = 100
+      /*   let money = 100
       let totalApple = 0
 
       function buyApple(x) {
@@ -15,13 +15,40 @@
           console.warn(`i dont have more money ${totalApple} Apple`)
         }
       }
-      buyApple(money)
 
       function buyMore(x) {
-        totalApple++
+         totalApple++
         buyApple(x - 10)
         //console.warn("buy more :", x)
       }
+      buyApple(money)
+      */
+      function test(x) {
+        if (x > 0) {
+          test(x - 1)
+        }
+        console.warn(x)
+      }
+      let data = 5
+      test(data)
+
+      //ab first time test(x) call howa to us waqt x=5 tha. 
+      //then control function ki body mei ayya then usney condition
+      // check ki if(x>0). To condition true hai kay 5>0 bara hai then 
+      //control if kay andr aya aur waha again  test(x-1) function call howa
+      // mean test(4). Ab behind the  scene ye howa kay execution callstack mei 
+      //pehlay test(5) execution kay liye gaya then condition true honey ki wja 
+      //sey callstack mein test(4) call howa, then again condtion true ki wja sey 
+      //test(3) call hoga callStack mein aur  is terah aik kay uper aik  test(5) 
+      //then test(4) test(3) test(2) test(1) test(0). Is terah callstack mein ye 
+      //sab ajaye gei. Becuase of  lexical environment and closour. inner function 
+      //outer function ka refference rakhta hai, to callStack mein ab top pr
+      // test(0) execute hoga aur  test(0) mei x==0 hai to condtion false 
+      //hojaye gi aur  control neechey wali line mei ajaye ga. jaha likha howa 
+      //hai console.log(x), is waqt x==0 hai to 0 print hoga. then test(0) 
+      //callStack sey remove hojaye ga. Then test(1) execute hoga so 1 print 
+      //hojaye ga. then test(2) and soo on. So because of  closour aur and 
+      //execution callstack 0 1 2 3 4 5 aisey print hoga.
     </script>
   </head>
 
