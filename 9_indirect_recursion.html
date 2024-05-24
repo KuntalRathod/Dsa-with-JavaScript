@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Indirect Recursion</title>
+    <script>
+      let money = 100
+      let totalApple = 0
+
+      function buyApple(x) {
+        //console.warn(x)
+        if (x > 0) {
+          console.warn(`I have ${x} Rs , ${totalApple} Apple`)
+          buyMore(x)
+        } else {
+          console.warn(`i dont have more money ${totalApple} Apple`)
+        }
+      }
+      buyApple(money)
+
+      function buyMore(x) {
+        totalApple++
+        buyApple(x - 10)
+        //console.warn("buy more :", x)
+      }
+    </script>
+  </head>
+
+  <body></body>
+</html>
