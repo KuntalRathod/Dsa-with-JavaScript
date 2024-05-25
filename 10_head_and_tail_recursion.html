@@ -24,13 +24,14 @@
       }
       topFunction()
       */
+      //==========================
 
       function test(x) {
-        console.warn(x)
+        //console.warn(x) //head recursion
         if (x > 0) {
           test(x - 1)
         }
-        //console.warn(x)
+        console.warn(x) //tail recursion
       }
       let data = 5
       test(data)
