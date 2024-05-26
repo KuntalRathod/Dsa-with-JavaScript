@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Reverse String with Stack in Javascript</title>
+    <script>
+      let data = []
+      let currentSize = data.length //current pointer
+      function push(newVal) {
+        data[currentSize] = newVal
+        currentSize += 1
+      }
+      function pop() {
+        lastRemovedItem = data[currentSize - 1]
+        currentSize -= 1
+        data.length = currentSize
+        return lastRemovedItem
+      }
+
+      function reverseStr(item) {
+        //console.warn(item)
+        for (let i = 0; i < item.length; i++) {
+          push(item[i])
+        }
+        for (let i = 0; i < item.length; i++) {
+          //console.warn(pop())
+           item[i] = pop() //this is done by call by reference
+          //pop()
+        }
+      }
+
+      let str = "Kuntal"
+      str = str.split("") //convert string into array
+      reverseStr(str) //passing the array
+      console.warn(str.join(""))     //array to string
+
+
+
+      //console.warn("stack is ",data)
+
+      //this is a example of call by reference and only works in object and array!
+      /*
+      function test(a){
+        a[0] = 300
+      }
+      a = [20]
+      test(a)
+      console.warn(a)
+      */
+    </script>
+  </head>
+  <body></body>
+</html>
