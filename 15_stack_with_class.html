@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Stack with class in JavaScript</title>
+    <script>
+      class Stack {
+        item = []
+        currentSize
+        maxSize
+        constructor(size) {
+          //jab bhi ham cla ss ko call karte hai tab sabase pahele constructor call hota hai
+          //console.warn("call")
+          this.maxSize = size
+          this.currentSize = this.item.length
+        }
+        push(newVal) {
+          if (this.currentSize >= this.maxSize) {
+            alert("Stack is full")
+          } else {
+            this.item[this.currentSize] = newVal
+            this.currentSize++
+          }
+        }
+        pop() {
+          if (this.currentSize > 0) {
+            this.currentSize--
+            this.item.length = this.currentSize
+          } else {
+            alert("Stack is Already empty!!")
+          }
+        }
+        display() {
+          console.warn(this.item)
+        }
+      }
+      st1 = new Stack(5)
+      //st1.push(20)
+      //st1.display()
+    </script>
+  </head>
+  <body></body>
+</html>
