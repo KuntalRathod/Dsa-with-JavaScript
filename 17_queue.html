@@ -2,7 +2,24 @@
 <html lang="en">
   <head>
     <title>Queue in JavaScript</title>
-    <script></script>
+    <script>
+        let queue = []
+        let currentSize = queue.length;
+        let maxSize = 5
+
+        function enqueue(newVal){
+            queue[currentSize] = newVal
+            currentSize++
+         }
+         function display(){
+            console.warn(queue)
+         }
+
+        enqueue(20)
+        display()
+
+        
+    </script>
   </head>
   <body>
     <h1>Queue in JavaScript</h1>
