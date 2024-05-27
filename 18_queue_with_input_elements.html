@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Queue with input elements in JavaScript</title>
+    <script>
+      let queue = []
+      let currentSize = queue.length
+      let maxSize = 5
+
+      function enqueue(newVal) {
+        queue[currentSize] = newVal
+        currentSize++
+      }
+      function display() {
+        console.warn(queue)
+      }
+      function dequeue() {
+        if (currentSize > 0) {
+          for (let i = 0; i < queue.length; i++) {
+            //console.warn(queue[i])
+            queue[i] = queue[i + 1]
+          }
+          currentSize--
+          queue.length = currentSize
+        } else {
+          alert("Queue is already empty!!")
+        }
+      }
+
+      //enqueue(20)
+      //enqueue(60)
+      //enqueue(56)
+      //display()
+    </script>
+  </head>
+  <body>
+    <h1>Queue with input elements in JavaScript</h1>
+  </body>
+</html>
