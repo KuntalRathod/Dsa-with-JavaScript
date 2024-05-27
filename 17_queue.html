@@ -3,32 +3,34 @@
   <head>
     <title>Queue in JavaScript</title>
     <script>
-        let queue = []
-        let currentSize = queue.length;
-        let maxSize = 5
+      let queue = []
+      let currentSize = queue.length
+      let maxSize = 5
 
-        function enqueue(newVal){
-            queue[currentSize] = newVal
-            currentSize++
-         }
-         function display(){
-            console.warn(queue)
-         }
-         function dequeue(){
-            for(let i=0; i<queue.length; i++){
-                //console.warn(queue[i])
-                queue[i] = [i+1]
-            }
+      function enqueue(newVal) {
+        queue[currentSize] = newVal
+        currentSize++
+      }
+      function display() {
+        console.warn(queue)
+      }
+      function dequeue() {
+        if (currentSize > 0) {
+          for (let i = 0; i < queue.length; i++) {
+            //console.warn(queue[i])
+            queue[i] = queue[i + 1]
+          }
+          currentSize--
+          queue.length = currentSize
+        } else {
+          alert("Queue is already empty!!")
+        }
+      }
 
-         }
-         dequeue()
-
-        //enqueue(20)
-        //enqueue(60)
-        //enqueue(56)
-        //display()
-
-        
+      //enqueue(20)
+      //enqueue(60)
+      //enqueue(56)
+      //display()
     </script>
   </head>
   <body>
