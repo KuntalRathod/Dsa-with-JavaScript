@@ -14,9 +14,19 @@
          function display(){
             console.warn(queue)
          }
+         function dequeue(){
+            for(let i=0; i<queue.length; i++){
+                //console.warn(queue[i])
+                queue[i] = [i+1]
+            }
 
-        enqueue(20)
-        display()
+         }
+         dequeue()
+
+        //enqueue(20)
+        //enqueue(60)
+        //enqueue(56)
+        //display()
 
         
     </script>
