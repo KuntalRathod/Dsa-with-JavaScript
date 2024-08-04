@@ -15,7 +15,7 @@
         console.warn(queue)
       }
       function dequeue() {
-        if (currentSize > 0) {
+        if (!isEmpty()) {
           for (let i = 0; i < queue.length; i++) {
             //console.warn(queue[i])
             queue[i] = queue[i + 1]
@@ -26,17 +26,42 @@
           alert("Queue is already empty!!")
         }
       }
-      function front(){
-        alert( )       
+      function front() {
+        if (!isEmpty()) {
+          console.warn(queue[0])
+        } else {
+          alert("Queue is already empty!!")
+        }
+      }
+      function rear() {
+        if (!isEmpty()) {
+          console.warn(queue[currentSize.length - 1])
+        } else {
+          alert("Queue is already empty!!")
+        }
       }
 
+      function isEmpty() {
+        if (currentSize <= 0) {
+          return true
+        } else {
+          return false
+        }
+      }
+
+      //enqueue(10)
       //enqueue(20)
-      //enqueue(60)
-      //enqueue(56)
+      //enqueue(30)
+
+      //front()
+      //rear()
+
       //display()
     </script>
   </head>
   <body>
     <h1>Queue with input elements in JavaScript</h1>
+    <input placeholder="enter element" id="qE1" >
+    <button>Add Element</button>
   </body>
 </html>
