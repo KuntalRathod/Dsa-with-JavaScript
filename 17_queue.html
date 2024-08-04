@@ -8,8 +8,12 @@
       let maxSize = 5
 
       function enqueue(newVal) {
-        queue[currentSize] = newVal
-        currentSize++
+        if (currentSize >= maxSize) {
+          alert("Queue is already full!")
+        } else {
+          queue[currentSize] = newVal
+          currentSize++
+        }
       }
       function display() {
         console.warn(queue)
