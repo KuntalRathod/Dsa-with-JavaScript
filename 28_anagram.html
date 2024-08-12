@@ -1,14 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checks Strings are Anagram</title>
+  </head>
+  <body>
     <script>
-        
+      //what is anagram
+      //anagram strings are two strings built up by the same set of characters, where the
+      //order of characters is the only difference in the strings.
+      //like heart and earth ,,, Silent and listen
+
+      //things we need to check
+      //lengths of both words would be the same
+      //if not the same length so return the false directly
+      //ki
+
+      function checkAnagarm(str1, str2) {
+        //validate the s1 and s2 are valid strings
+        if (str1.length !== str2.length) {
+          return false
+        }
+        const charsInStr1 = {}
+        for (let char of str1) {
+          if (!charsInStr1[char]) {
+            charsInStr1[char] = 0
+          }
+          charsInStr1[char] = charsInStr1[char] + 1
+        }
+        const charsInStr2 = {}
+        for (let char of str2) {
+          if (!charsInStr2[char]) {
+            charsInStr2[char] = 0
+          }
+          charsInStr2[char] = charsInStr2[char] + 1
+        }
+
+        //for in loop => apko objects ki keys ko ek ek karke deta hai
+        console.log(charsInStr1)
+        for (let key in charsInStr1) {
+          if (charsInStr1[key] !== charsInStr2[key]) {
+            return false
+          }
+          // console.log("Key is ", key)
+        }
+
+        return true
+      }
+      console.log("pools spool", checkAnagarm("pools", "spool"))
     </script>
-    
-</body>
+  </body>
 </html>
