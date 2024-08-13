@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map dsa with js</title>
+  </head>
+  <body>
+    <script>
+      let data = new Map([
+        ["name", "kuntal"],
+        [true, "boolean key"],
+        [100, "hello number"],
+      ])
+      //for add key values you can use 'set' keyword
+      //   data.set("color", "green")
+
+      //size get
+      //   console.log(data.size)
+
+      //key is present or not
+      //   console.log(data.has(100))
+
+      //get value of the key
+      //   console.log(data.get(100))
+
+      //clears all the data
+      //   data.clear()
+
+      //   console.log(data)
+
+      //if you did not put the let so they take var by default
+      //   for (let x of data) {
+      //console.log(x[0])  //for geting the all keys
+      //   console.log(x[1])    //for geting the all values
+      //  }
+
+      //   data.forEach((val, key) => {
+      //     console.log(val)
+      //   })
+
+      data.delete("name")
+
+      console.log(data)
+
+      // Get the first key
+      //   let firstKey = data.keys().next().value
+
+      // Remove the first entry
+      //   data.delete(firstKey)
+
+      //   console.log(data)
+    </script>
+  </body>
+</html>
