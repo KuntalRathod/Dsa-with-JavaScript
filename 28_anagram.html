@@ -23,10 +23,11 @@
         }
         const charsInStr1 = {}
         for (let char of str1) {
-          if (!charsInStr1[char]) {
-            charsInStr1[char] = 0
-          }
-          charsInStr1[char] = charsInStr1[char] + 1
+          // if (!charsInStr1[char]) {
+          //   charsInStr1[char] = 0
+          // }
+          // charsInStr1[char] = charsInStr1[char] + 1
+          charsInStr1[char] = (charsInStr1[char] || 0) + 1
         }
         const charsInStr2 = {}
         for (let char of str2) {
